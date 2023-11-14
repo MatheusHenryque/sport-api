@@ -1,25 +1,47 @@
-from flask import Flask, render_template
+from flask import Flask, request, jsonify
+from sqlalchemy import create_engine, Column, Integer, String, Sequence
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+import requests
+import json
 
 app = Flask(__name__)
-# route -> hashtagtreinamentos.com/
-# função -> o que você quer exibir naquela página
-# template
 
-@app.route("/")
-def homepage():
-    return render_template("homepage.html")
+engine = create_engine('sqlite:///sport.db')
 
-@app.route("/contatos")
+Base = declarative_base()
+
+class Usuario(Base):
+    __tablename__ = 'TB_USUARIO'
+
+    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+    email = Column(String(60))
+    senha = Column(String(60))
+
+Base.metadata.create_all(engine)
+
+Session = sessionmaker(bind=engine)
+session = Session()
+
+@app.route("/login", methods=['POST','GET'])
+def login():
+    data = request.get_json()
+    email = data['email']
+    senha = data['senha']
+    
+    new_user = Usuario(email=email, senha=senha)
+    session.add(new_user)
+    session.commit()
+
+    return jsonify({"message": "Usuário criado com sucesso!"}), 201
+
+@app.route("/login/cadastro", methods=['POST', 'GET'])
 def contatos():
-    return render_template("contatos.html")
+    return "A API de cadastro também está no ar !"
 
-@app.route("/usuarios/<nome_usuario>")
-def usuarios(nome_usuario):
-    return render_template("usuarios.html", nome_usuario=nome_usuario)
 
-# colocar o site no ar
 if __name__ == "__main__":
     app.run(debug=True)
 
-    # servidor do heroku
+    
 
