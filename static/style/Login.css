@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} 
+
+.containerLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 5px #c4c4c4;
+    width: 60vh;
+    height: 80vh;
+}
+
+.containerLogin img{
+    width: 300px;
+    height: 300px;
+}
+
+.containerLogin .formContainer{ 
+    width: 100%;
+    height: 60vh;
+    bottom: 50%;
+}
+
+.containerLogin .formContainer form{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15%;
+    width: 100%;
+    height: 100%;
+}
+
+.inputContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.inputContainer input{
+    width: 100%;
+    padding: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    outline: none;
+    height: 2vh;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.inputContainer label{
+    position: absolute;
+    bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    transition: all 0.5s ease;
+}
+
+.inputContainer input:focus,
+.inputContainer input:valid{
+    border-color: green;
+}
+
+.inputContainer input:focus ~ label,
+.inputContainer input:valid ~ label{
+    transform: translateY(-20px);
+    color: green;
+}
+
+.inputContainer input:hover{
+    outline-offset: none;
+}
+
+.btnEntrar{
+    width: 50%;
+    height: 10%;
+    cursor: pointer;
+    background: transparent;
+    border: green 1px solid;
+    transition: ease-in-out 0.35s;
+}
+
+.btnEntrar:hover
+{
+    background-color: green;
+    color: #fff;
+}
+
+.containerLogin .formContainer form span{
+    position: absolute;
+    bottom: 27%;
+    font-family:'Roboto', sans-serif;
+    font-weight: 400;
+}

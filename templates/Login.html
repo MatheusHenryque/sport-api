@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\style\Login.css">
+    <title>Document</title>
+</head>
+<body>
+<div class='container'>
+    <div class='containerLogin'>
+        <img src="static\images\SPORT.png" alt="Erro ao carregar a imagem logo"/>
+        <div class='formContainer'>
+            <form>
+                <div class='inputContainer'>
+                    <input type='text' id="inpUsuario" class='inpDadosUsuario' onChange="{{ getUsuario }}" autoComplete='off' required/>
+                    <label>Nome ou e-mail</label>
+                </div>
+                <div class='inputContainer'>
+                    <input type='password' id='inpSenha' class='inpDadosUsuario' onChange="{{ getSenha }}" autoComplete='off' required/>
+                    <label>Senha</label>
+                </div>
+                <button type='submit' class='btnEntrar' onClick="{{ ValidaUsuario }}">Entrar</button>
+                <span>Não tem uma conta? <a href='/cadastro'>Cadastre-se</a></span>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="static\js\Login.js"></script>
+</body>
+</html>

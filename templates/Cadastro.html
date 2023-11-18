@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\style\Cadastro.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class='container'>
+        <div class='containerCadastro'>
+            <div class='containerPropaganda'>
+                <div class='colorOverlay'>
+                
+                </div>
+            </div>
+            <div class='containerForm'>
+                <div class='logoContainer'>
+                    <span>SPORT <span>SPHERE</span></span>
+                    <label>Desperte Seu Espírito Competitivo. Transforme-se na SportSphere!</label>
+                </div>
+                <div class='formInputs'>
+                    <form>
+                        <div>
+                            <input type='text' id="inpUsuario" class='inpDadosUsuario' onChange="(event) => getNome(event)" autoComplete='off' required/>
+                            <label>Digite seu nome</label>
+                        </div>
+                        <div>
+                            <input type='text' id="inpEmail" class='inpDadosUsuario' onChange="(event) => getEmail(event)" autoComplete='off' required/>
+                            <label>Digite seu e-mail</label>
+                        </div>
+                        <div>
+                            <input type='text' id="inpTelefone" class='inpDadosUsuario' onChange="(event) => getTelefone(event)" autoComplete='off' required/>
+                            <label>Digite seu telefone</label>
+                        </div>
+                        <div>
+                            <input type='password' id="inpSenha" class='inpDadosUsuario' onChange="(event) => getSenha(event)" autoComplete='off' required/>
+                            <label>Digite sua senha</label>
+                        </div>
+                        <button type='submit' class='btnCadastrar' onClick="() => services.CadastraUsuario(nome, email, telefone, senha)">Cadastrar</button>
+                        <span>Abra as portas para um mundo de esportes apaixonante.<a href='/login'>Toque para entrar no universo do SportSphere agora!</a></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static\js\Cadastro.js"></script>
+</body>
+</html>
