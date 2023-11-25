@@ -54,6 +54,18 @@ def cadastro():
         
     return render_template('Cadastro.html')
 
+@app.route("/home", methods=["POST", "GET"])
+def postagens():
+    return render_template("postagens.html")
+
+@app.route("/home/perfil", methods=["POST","GET"])
+def perfil():
+    return render_template("ConfiguracaoPerfil.html")
+
+@app.route("/home/nova-postagem", methods=["POST","GET"])
+def novaPostagem():
+    return render_template("NovasPostagens.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
 

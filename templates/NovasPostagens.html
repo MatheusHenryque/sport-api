@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportSphere - Nova Postagem</title>
+    <script src="static/js/NovaPostagem.js"></script>
+    <link rel="stylesheet" href="/static/style/NovasPostagens.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="latBarContainer">
+            <div>
+                <img src="/static/images/SPORT.png" alt="logo SportSphere"/>
+            </div>
+            <div>
+                <a href="../home"><i class="fa-solid fa-bell"></i> Postagens</a>
+                <a href="../home/nova-postagem"><i class="fa-solid fa-comments"></i> Nova Postagem</a>
+                <a href="../home/perfil"><i class="fa-solid fa-user"></i> Configuração do Perfil</a>
+            </div>
+            <div>
+                <button type="button"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+            </div>
+        </div>
+        <div class="postContentContainer">
+            <div>
+                <span>Nova Postagem</span>
+            </div>
+            <div>
+                <label>Conteúdo da Postagem</label>
+                <textarea rows="4" cols="50"></textarea>
+            </div>
+            <div>
+                <button type="button" id="btnArq"><i class="fa-solid fa-upload"></i> Faça o Upload de um arquivo</button>
+                <button type="button" id="btnPostar"><i class="fa-solid fa-rotate"></i> Postar</button>
+                <input type="file" id="btnAction"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

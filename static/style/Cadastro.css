@@ -25,7 +25,7 @@
     width: 40%;
     height: 100%;
     position: absolute;
-    background-image: url('../img/corredor.jpg');
+    background-image: url('/static/images/corredor.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
