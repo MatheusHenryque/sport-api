@@ -159,10 +159,12 @@
 .btnCadastrar{
     width: 50%;
     height: 7%;
+    margin-top: -20px;
     cursor: pointer;
     background: transparent;
     border: green 1px solid;
     transition: ease-in-out 0.35s;
+    
 }
 
 .btnCadastrar:hover

@@ -1,7 +1,8 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const LoginRender = () => {
-        const logoSrc = '../../img/SPORT.png';
+        const logoSrc = '/static/images/SPORT.png';
+        let senha = '';
+        let usuario = '';
 
         const getSenha = (event) => {
             senha = event.target.value;
@@ -11,28 +12,44 @@ document.addEventListener('DOMContentLoaded', function () {
             usuario = event.target.value;
         }
 
+        const redirectToHome = () => {
+            // Redirecionar para a página /home
+            window.location.href = '/home';
+        }
+
         const ValidaUsuario = (event) => {
-            event.preventDefault(); 
+            event.preventDefault();
 
-            const xhr = new XMLHttpRequest();
-            const url = '/login';
-
-            xhr.open('POST', url, true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    const data = JSON.parse(xhr.responseText);
-                    console.log(data);
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: usuario,
+                    senha: senha
+                }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erro na solicitação: ${response.status}`);
                 }
-            };
-
-            const requestBody = JSON.stringify({
-                email: usuario,
-                senha: senha
+                return response.json();
+            })
+            .then(data => {
+                if (data.message === 'Login bem-sucedido') {
+                    console.log(data);
+                    // Se o login for bem-sucedido, redirecione para /home
+                    redirectToHome();
+                } else {
+                    // Tratar caso de login mal-sucedido
+                    console.log('Login falhou');
+                }
+            })
+            .catch(error => {
+                // Código para lidar com erros
+                console.error(error);
             });
-
-            xhr.send(requestBody);
         }
 
         return {
@@ -45,11 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const loginModule = LoginRender();
 
-    
     document.getElementById('inpUsuario').addEventListener('input', loginModule.getUsuario);
     document.getElementById('inpSenha').addEventListener('input', loginModule.getSenha);
     document.querySelector('form').addEventListener('submit', loginModule.ValidaUsuario);
 
-    
     document.querySelector('.containerLogin img').src = loginModule.logoSrc;
 });

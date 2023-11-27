@@ -51,17 +51,17 @@
     width: 100%;
 }
 
-.latBarContainer div:nth-child(3) button{
+.latBarContainer .btnSair {
     width: 90%;
     height: 5vh;
     margin-left: 20px;
     cursor: pointer;
     border: solid 1px green;
     background-color: white;
-    transition: 0.35ms ease-in-out;
+    transition: 0.35s ease-in-out;
 }
 
-.latBarContainer div:nth-child(3) button:hover{
+.latBarContainer .btnSair:hover {
     background-color: green;
     color: white;
 } 

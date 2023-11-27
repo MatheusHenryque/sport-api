@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import psycopg2 as pg
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -54,17 +55,55 @@ def cadastro():
         
     return render_template('Cadastro.html')
 
+@app.route("/submit_post", methods=["POST"])
+def submit_post():
+    data = request.get_json()
+    post_content = data.get('content')
+    post_time = data.get('time')
+    
+
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO TB_POSTS(content, time) VALUES (%s, %s)', (post_content, post_time))
+    conn.commit()
+
+    return jsonify({'status': 'success'})
+
+@app.route("/get_posts", methods=["POST","GET"])
+def get_post():
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT content, time FROM TB_POSTS ORDER BY id DESC")
+        posts = cursor.fetchall()
+        cursor.close()
+
+        post_list = []
+        for post in posts:
+            content = post[0]
+            time_str = post[1]
+
+            if isinstance(time_str, str):
+                time_str = datetime.strptime(time_str, "%Hh %Mmin").strftime('%Hh %Mmin') if time_str else None
+            
+            post_list.append({'content': content, 'time': time_str})
+
+        return jsonify(post_list)
+    except Exception as e:
+        print("Erro ao obter posts:", str(e))
+        return jsonify([])
+    
+
+
 @app.route("/home", methods=["POST", "GET"])
 def postagens():
     return render_template("postagens.html")
 
-@app.route("/home/perfil", methods=["POST","GET"])
-def perfil():
+@app.route("/home/configPerfil", methods=["POST","GET"])
+def configPerfil():
     return render_template("ConfiguracaoPerfil.html")
 
-@app.route("/home/nova-postagem", methods=["POST","GET"])
-def novaPostagem():
-    return render_template("NovasPostagens.html")
+@app.route("/home/times", methods=["POST","GET"])
+def times():
+    return render_template("times.html")
 
 if __name__ == '__main__':
     app.run(debug=True)

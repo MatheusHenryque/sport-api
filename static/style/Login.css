@@ -89,6 +89,7 @@
 .btnEntrar{
     width: 50%;
     height: 10%;
+    margin-top: -33px;
     cursor: pointer;
     background: transparent;
     border: green 1px solid;

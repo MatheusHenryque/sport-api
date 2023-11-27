@@ -1,96 +1,284 @@
+/* Importação de fonte do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-*{
+/* Reset de margens e preenchimentos padrão */
+* {
     margin: 0;
     padding: 0;
-    
 }
 
-.container{
-    display:flex;
-    
+/* Estilização do contêiner principal */
+.container {
+    display: flex;
 }
 
-.latBarContainer{
+/* Estilização da barra lateral esquerda */
+.latBarContainer {
     display: flex;
     flex-direction: column;
     width: 55vh;
     height: 100vh;
     box-shadow: 0 5px 5px #9f9d9d;
-    
 }
 
-.latBarContainer div:nth-child(1) img{
+.latBarContainer div:nth-child(1) img {
     width: 60%;
     height: 100%;
     margin-left: 15%;
-    
 }
 
-.latBarContainer div:nth-child(2){
+.latBarContainer div:nth-child(2) {
     display: flex;
     flex-direction: column;
-    gap: 25px
+    gap: 25px;
 }
 
-.latBarContainer div:nth-child(2) a{
+.latBarContainer div:nth-child(2) a {
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
     color: green;
-    transition: 0.35ms ease-in-out;
+    transition: 0.35s ease-in-out;
     width: 80%;
     margin-left: 20px;
     font-size: 15px;
     padding: 5px 3px;
 }
 
-.latBarContainer div:nth-child(2) a:hover{
+.latBarContainer div:nth-child(2) a:hover {
     background-color: green;
     color: rgb(255, 255, 255);
 }
 
-
-.latBarContainer div:nth-child(3){
+.latBarContainer div:nth-child(3) {
     margin-top: 85%;
     width: 100%;
 }
 
-.latBarContainer div:nth-child(3) button{
+.latBarContainer .btnSair {
     width: 90%;
     height: 5vh;
     margin-left: 20px;
     cursor: pointer;
     border: solid 1px green;
     background-color: white;
-    transition: 0.35ms ease-in-out;
+    transition: 0.35s ease-in-out;
 }
 
-.latBarContainer div:nth-child(3) button:hover{
+.latBarContainer .btnSair:hover {
     background-color: green;
     color: white;
-} 
-
-.postContainer{
-    width: 100%;
-    background-color: rgb(196, 245, 221);
 }
 
-.nav-right{
+
+
+/* Estilização do contêiner de postagens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fbfbfb;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+div.newPost {
+    width: 100%;
+    height: auto; /* Alterado para auto para se adaptar ao conteúdo */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);
+    margin: 50px 0;
+    padding: 25px;
+}
+
+div.newPost div.infoUser {
+    display: flex;
+    align-items: center;
+    margin-right: 650px;
+}
+
+div.newPost div.infoUser div.imgUser {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #333;
+    margin-right: 10px; /* Espaçamento entre a imagem e o nome */
+}
+
+div.newPost div.infoUser strong {
+    font-size: 16px;
+    color: rgb(84, 151, 84);
+}
+
+div.newPost form.formPost {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+div.newPost form.formPost textarea {
+    height: 90px;
+    background: #fbfbfb;
+    margin: 15px 0;
+    padding: 15px; /* Reduzi o padding para evitar que ocupe muito espaço */
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+    border: 0;
+    font-weight: bold;
+    color: #727272;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.newPost form.formPost div.iconsAndButton div.icons{
+    display: flex;
+    width: 100;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.newPost form.formPost div.iconsAndButton{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.newPost form.formPost div.iconsAndButton div.icons button{
+    outline: none;
+    background: #fff;
+    margin-right: 15px;
+    border: 0;
+    cursor: pointer;
+}
+
+div.newPost form.formPost div.iconsAndButton button.btnSubmitForm{
+    background: aquamarine;
+    padding: 10px 50px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    transition: 0.8s;
+}
+
+div.newPost form.formPost div.iconsAndButton button.btnSubmitForm:hover{
+    background: rgb(33, 132, 33);
+}
+
+ul.posts li.post{
+    margin-bottom: 50px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 1px 0 3px rgba(0,0,0,0.5);
+}
+
+ul.posts li.post div.infoUserPost{
+    display: flex;
+    align-items: center;
+}
+
+ul.posts li.post div.infoUserPost div.imgUserPost{
+    width: 35px;
+    height: 30px;
+    border-radius: 50%;
+    background: aquamarine;
+}
+
+ul.posts li.post div.infoUserPost div.nameAndhour{
+    margin-left: 10px;
+}
+
+ul.posts li.post div.infoUserPost  div.nameAndhour >strong{
+    color: aquamarine;
+}
+
+ul.posts li.post div.infoUserPost div.nameAndhour >p{
+    color: aquamarine;
+    font-size: 12px;
+}
+
+ul.posts li.post >p{
+    width: 100%;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #727272;
+
+}
+
+ul.posts li.post div.actionBtnPost{
+    align-items: center;
     display: flex;
 }
 
-.postContainer .pesquisa input{
-    margin-right: 5%; 
-    font-size: 18px;
-    line-height: 30px;
-    
+ul.posts li.post div.actionBtnPost button.filesPost{
+    padding: 5px 20px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-right: 10px;
+    outline: none;
+    color:#fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.6s;
+
 }
 
-.postContainer .pesquisa i{
-    width: 400px;
-    margin-top: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    
+ul.posts li.post div.actionBtnPost button.filesPost img{
+    margin-right: 5px;
+}
 
+.like{
+    background: #ff6b6b;
+}
+.like:hover{
+    background: #611313;
+}
+.comment{
+    background: #f3ff6b;
+}
+.comment:hover{
+    background: #878916;
+}
+.share{
+    background: #1ad254;
+}
+.share:hover{
+    background: #1b813d;
+}
+
+.btnFileForm{
+    margin-right: -130px;
 }

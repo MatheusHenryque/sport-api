@@ -1,37 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SportSphere - Postagens</title>
     <link rel="stylesheet" href="static\style\postagens.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-</head> 
 <body>
     <div class="container">
         <div class="latBarContainer">
             <div>
-                <img src="/static/images/SPORT.png" alt="logo SportSphere"/>
+                <img src="/static/images/SPORT.png" alt="logo SportSphere" />
             </div>
             <div>
                 <a href="../home"><i class="fa-solid fa-bell"></i> Postagens</a>
-                <a href="../home/perfil"><i class="fa-solid fa-comments"></i> Nova Postagem</a>
-                <a href="../home/nova-postagem"><i class="fa-solid fa-user"></i> Configuração do Perfil</a>
-            </div>
-            <div>
-                <a href="/"><button type="button"><i class="fa-solid fa-right-from-bracket"></i> Sair</button></a>
-            </div>
-        
-        </div>
-        <!--TODA POSTAGEM NOVA DEVE SER RENDEREZADA NO postContainer-->
-        <div class="postContainer">
-            <div class="pesquisa">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" name="p" placeholder="Pesquisar">
+                <a href="../home/times"><i class="fa-solid fa-bell"></i>Times</a>
+                <a href="../home/configPerfil"><i class="fa-solid fa-user"></i> Configuração do Perfil</a><br><br><br>
+                <a href="/"><button class="btnSair" type="button"><i class="fa-solid fa-right-from-bracket"></i> Sair</button></a>
             </div>
             
         </div>
+
+        <!-- Toda POSTAGEM NOVA DEVE SER RENDERIZADA NO postContainer -->
+        <main class="main">
+            <div class="newPost">
+                <div class="infoUser">
+                    <div class="imgUser">
+                    </div>
+                    <strong>Matheus Henrique</strong>
+                </div>
+    
+                <form action="" class="formPost" id="formPost">
+                    <textarea name="textarea" id="textarea" placeholder="Joga Bola Jogador"></textarea>
+                    <div class="iconsAndButton">
+                        <div class="icons">
+                            <label for="imageInput" class="btnFileForm">
+                                <img src="/static/images/img.svg" alt="Adicionar uma imagem">
+                            </label>
+                            <input type="file" accept="image/*" id="imageInput" class="btnFileForm" style="visibility: hidden;">
+                            
+                            <label for="gifInput" class="btnFileForm">
+                                <img src="/static/images/gif.svg" alt="Adicionar um gif">
+                            </label>
+                            <input type="file" accept="image/gif" id="gifInput" class="btnFileForm" style="visibility: hidden;">
+        
+                            <label for="videoInput" class="btnFileForm">
+                                <img src="/static/images/video.svg" alt="Adicionar um vídeo">
+                            </label>
+                            <input type="file" accept="video/*" id="videoInput" class="btnFileForm" style="visibility: hidden;">
+                            
+                        </div>
+                
+                        <button type="submit" id="botao" class="btnSubmitForm">Publicar</button>
+                    </div>
+                </form>
+                
+                <script>
+                    function openFileInput(inputId) {
+                        document.getElementById(inputId).click();
+                    }
+                </script>
+                
+                
+            </div>
+            <ul class="posts" id="posts">
+                <li class="post">
+                    <div class="infoUserPost">
+                        <div class="imgUserPost"></div>
+                        <div class="nameAndHour">
+                            <strong>Matheus Henrique</strong>
+                            <p>21h</p>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam facere quidem. Magni praesentium autem expedita vitae molestias hic similique excepturi incidunt quam aliquam doloremque placeat, repellat beatae deleniti odit.</p>
+                    <div class="actionBtnPost">
+                        <button type="button" class="filesPost like"><img src="/static/images/heart.svg" alt="Curtir">Curtir</button>
+                        <button type="button" class="filesPost comment"><img src="/static/images/comment.svg" alt="Comentar">Comentar</button>
+                        <button type="button" class="filesPost share"><img src="/static/images/share.svg" alt="Compartilhar">Compartilhar</button>
+                    </div>
+                </li>
+                
+            </ul>
+        </main>
     </div>
+    <script type="module"  src="/static/js/postagens.js"></script>
 </body>
+
 </html>
