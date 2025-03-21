@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="loading-container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="TVLA Logo" class="loading-logo">
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = "{{ url_for('nova_rota') }}"; // Redireciona após 3 segundos
+        }, 3000);
+    </script>
+</body>
+</html>

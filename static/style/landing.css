@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Comfortaa';
+    font-family: 'Roboto';
 }
 
 body{
@@ -238,6 +238,82 @@ section.topo-do-site .flex{
     100% {
       transform:translateX(25%);
     }
+  }
+
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-logo {
+    width: 150px; /* Ajuste conforme necessário */
+    animation: blink 1s infinite alternate ease-in-out;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	animation: spinz 1.35s linear infinite;
+	width: 100%;
+	height: 100%;
+	/* background-color: #ffffff; */
+	background-color: #F6FBFD;       /* Change the background color here */
+	z-index: 100;
+  }
+  
+  .loader {
+	border: 16px solid #efeee8;
+	border-top: 16px solid #066931;  /* Change the preloader color here */
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	animation: spin 1.35s linear infinite;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -60px;
+	margin-left: -60px;
+  }
+
+  @keyframes spin {
+	0% {
+	  transform: rotate(0deg);
+	  opacity:1;
+	}
+	50% {
+	  transform: rotate(360deg);
+	  opacity:1;
+	}
+	75% {
+	  opacity:1;
+	  transform: rotate(180deg);
+	}
+	100% {
+	  transform: rotate(0deg);
+	  opacity:0;
+	}
+  }
+  
+  @keyframes spinz {
+	0% {
+	  opacity:1;
+	}
+	50% {
+	  opacity:1;
+	}
+	75% {
+	  opacity:1;
+	}
+	100% {
+	  opacity:0;
+	}
   }
 
 
