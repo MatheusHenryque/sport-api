@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style/Login.css">
+    <link rel="stylesheet" href="static\style\Cadastro.css">
     <title>SportSphere</title>
 </head>
 <body>
-<div class='container'>
-    <div class='containerLogin'>
-        <h1>TVLA</h1>
-        <br><br><br><br><br><br>    
-        <div class='formContainer'>
-            <form>
-                <div class='inputContainer'>
-                    <input type='text' id="inpUsuario" class='inpDadosUsuario' onChange="{{ getUsuario }}" autoComplete='off' required/>
-                    <label>Nome ou e-mail</label>
+    <div class='container'>
+        <div class='containerCadastro'>
+            <div class='containerPropaganda'>
+                <div class="bg"></div>
+                <div class="bg bg2"></div>
+                <div class="bg bg3"></div>
+            </div>
+            
+            <div class='containerForm'>
+                <div class='logoContainer'>
+                    <span><span>TVLA ⚽</span></span>
+                    <label>Mostre o seu potencial, conecte-se às oportunidades com o Trivela !</label>
                 </div>
-                <div class='inputContainer'>
-                    <input type='password' id='inpSenha' class='inpDadosUsuario' onChange="{{ getSenha }}" autoComplete='off' required/>
-                    <label>Senha</label>
+                <div class='formInputs'>
+                    <form>
+                        <div class='inputContainer'>
+                            <input type='text' id="inpUsuario" class='inpDadosUsuario' onChange="{{ getUsuario }}" autoComplete='off' required/>
+                            <label>Nome ou e-mail</label>
+                        </div>
+                        <div class='inputContainer'>
+                            <input type='password' id='inpSenha' class='inpDadosUsuario' onChange="{{ getSenha }}" autoComplete='off' required/>
+                            <label>Senha</label>
+                        </div>
+                        <button type='submit' class='btnEntrar' onClick="{{ ValidaUsuario }}">Entrar<a href="/home"></a></button>
+                        <span>Não tem uma conta? <a href='/cadastro'>Cadastre-se</a></span>
+                    </form>
                 </div>
-                <button type='submit' class='btnEntrar' onClick="{{ ValidaUsuario }}">Entrar<a href="/home"></a></button>
-                <span>Não tem uma conta? <a href='/cadastro'>Cadastre-se</a></span>
-            </form>
+            </div>
         </div>
     </div>
-</div>
-
-<script src="/static/js/Login.js"></script>
+    <script src="/static/js/Login.js"></script>
 </body>
 </html>
