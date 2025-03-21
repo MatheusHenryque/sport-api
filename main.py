@@ -13,7 +13,11 @@ conn = pg.connect(
     dbname="SportSphere.bd" 
 )
 
-@app.route("/", methods=['POST', 'GET'])
+@app.route('/')
+def inicio():
+    return render_template('landing.html')
+
+@app.route("/login", methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
         data = request.get_json()

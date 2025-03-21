@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const ValidaUsuario = (event) => {
             event.preventDefault();
 
-            fetch('/', {
+            fetch('/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
