@@ -15,6 +15,7 @@
 /* Estilização da barra lateral esquerda */
 .latBarContainer {
     display: flex;
+    position: fixed;
     flex-direction: column;
     width: 55vh;
     height: 100vh;
@@ -101,21 +102,21 @@ header {
 .main {
     max-width: 900px;
     margin: 0 auto;
+    margin-left: 35%;
 }
 
 div.newPost {
     width: 100%;
     height: auto; /* Alterado para auto para se adaptar ao conteúdo */
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     background: #fff;
     border-radius: 10px;
     box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);
     margin: 50px 0;
     padding: 25px;
+    
 }
 
 div.newPost div.infoUser {

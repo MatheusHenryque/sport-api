@@ -47,7 +47,7 @@ header{
     font-family: 'Comfortaa';
     width: 90%;
     margin-left: 5%;
-    border-radius: 30px;
+    border-radius: 35px;
     
 }
 
@@ -174,12 +174,6 @@ section.topo-do-site .flex{
 
 }
 
-.descricao{
-    background-color: #0b221e;
-    width: 100%;
-    margin: 0 auto;
-    padding: 410px;
-}
 
 .container2{
     width: 80%;
@@ -315,6 +309,84 @@ section.topo-do-site .flex{
 	  opacity:0;
 	}
   }
+
+
+.descricao {
+  width: 100%; 
+  padding: 50px 0; 
+  text-align: center;
+  background-color: #bccdc6;
+}
+
+h1 {
+  font-size: 2.5rem; 
+  margin-bottom: 150px; 
+}
+
+span {
+  color: #246545; 
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; /* Alinha verticalmente os itens */
+  width: 100%;
+  max-width: 1200px; /* Limita a largura máxima do container */
+  margin: 0 auto; 
+  padding: 0 20px;
+}
+
+.textodescricao {
+  width: 35%; 
+  text-align: left; 
+  padding-right: 20px; 
+  margin-bottom: 20%;
+}
+
+.descricaodotrivela{
+  font-size: 23px;
+  text-align: left;
+  letter-spacing: 2px;
+  color: #215133;
+}
+
+.imagensund {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+  width: 65%; 
+  align-items: center; 
+  gap: 20px; 
+}
+
+.imagensund img {
+  width: 100%;
+  max-width: 300px; 
+  height: auto;
+  object-fit: contain; 
+}
+
+.img03 {
+  position: relative;
+  top: -320px; 
+  right: -370px; 
+  transform: translateY(-50%); 
+  width: 200px; 
+}
+
+.img02{
+  margin-top: 20%;
+}
+
+.indicadores {
+  width: 100%; 
+  padding: 50px 0; 
+  text-align: center;
+  background-color: #183823;
+}
+
 
 
   footer {

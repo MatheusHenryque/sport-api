@@ -39,11 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 if (data.message === 'Login bem-sucedido') {
                     console.log(data);
-                    // Se o login for bem-sucedido, redirecione para /home
                     redirectToHome();
                 } else {
-                    // Tratar caso de login mal-sucedido
                     console.log('Login falhou');
+                    window.alert('Login de usuário ou Senha incorreta')
                 }
             })
             .catch(error => {
