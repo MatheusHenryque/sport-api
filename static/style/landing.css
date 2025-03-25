@@ -127,13 +127,13 @@ button:hover{
 }
 
 section .topo-do-site{
-    padding: 40px 4%;
+    padding: 60px 4%;
 }
 
 section.topo-do-site .flex{
     align-items: center;
     justify-content: center;
-    gap: 90px;
+    gap: 80px;
 }
 
 .topo-do-site h1{
@@ -189,10 +189,11 @@ section.topo-do-site .flex{
   
   .bg {
     animation:slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, rgb(20, 82, 53) 50%, #09f 50%);
+    background-image: linear-gradient(-60deg, rgb(97, 245, 176) 50%, rgb(32, 117, 103) 50%);
     bottom:0;
     left:-50%;
     opacity:.5;
+    height: 10;
     position:fixed;
     right:-50%;
     top:0;
@@ -313,14 +314,15 @@ section.topo-do-site .flex{
 
 .descricao {
   width: 100%; 
-  padding: 50px 0; 
+  padding: 60px 0; 
   text-align: center;
   background-color: #bccdc6;
+  margin-bottom: -150px;
 }
 
 h1 {
   font-size: 2.5rem; 
-  margin-bottom: 150px; 
+  margin-bottom: 100px; 
 }
 
 span {
@@ -346,7 +348,7 @@ span {
 }
 
 .descricaodotrivela{
-  font-size: 23px;
+  font-size: 20px;
   text-align: left;
   letter-spacing: 2px;
   color: #215133;
@@ -382,11 +384,52 @@ span {
 
 .indicadores {
   width: 100%; 
-  padding: 50px 0; 
+  padding: 120px 0; 
   text-align: center;
-  background-color: #183823;
+  background-color: #ffffff;
 }
 
+.descricaoPotencial{
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+
+.containerDados {
+  width: 70%;
+  background: linear-gradient(90deg, rgba(171, 226, 212, 0.675) 0%, rgba(169, 225, 208, 0.84) 78%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 0; 
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.ladoA,
+.ladoB {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; 
+  width: 35%;
+  height: 300px;
+}
+
+.separator {
+  width: 1.6px; 
+  background-color: #ffffff; 
+  height: 230px;
+  margin-top: 3%;
+}
+
+i{
+  font-size: 30px;
+}
+
+.tal{
+  background-color: #06d899;
+}
 
 
   footer {
@@ -406,7 +449,7 @@ span {
   
   .footer-containers {
     color: #ffffff;
-    height: 180px;
+    height: 200px;
     display: flex;
     align-items: center;
     width: max-content;
@@ -444,3 +487,5 @@ span {
     margin: 0;
     padding: 10px;
   }
+
+
