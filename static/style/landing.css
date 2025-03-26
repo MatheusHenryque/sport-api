@@ -2,17 +2,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
-    background-color:#e9faeb;
-    height: 100vh;;
+  body {
+      margin: 0;
+      background-color: #f4f4f4;
+  }
+}
+
+main {
+  margin: 0;  
+  padding: 0; 
+}
+
+section{
+  margin-bottom: 0;
 }
 
 .interface{
     max-width: 1280px;
     margin: 0 auto;
+    margin-bottom: 0;
 }
 
 .flex{
@@ -314,9 +326,9 @@ section.topo-do-site .flex{
 
 .descricao {
   width: 100%; 
-  padding: 60px 0; 
+  padding: 80px 0; 
   text-align: center;
-  background-color: #bccdc6;
+  background: radial-gradient(circle, rgb(232, 247, 243) 0%, rgb(181, 227, 213) 78%);
   margin-bottom: -150px;
 }
 
@@ -348,7 +360,7 @@ span {
 }
 
 .descricaodotrivela{
-  font-size: 20px;
+  font-size: 23px;
   text-align: left;
   letter-spacing: 2px;
   color: #215133;
@@ -397,7 +409,7 @@ span {
 
 .containerDados {
   width: 70%;
-  background: linear-gradient(90deg, rgba(171, 226, 212, 0.675) 0%, rgba(169, 225, 208, 0.84) 78%);
+  background: rgba(145, 198, 182, 0.84);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -427,8 +439,125 @@ i{
   font-size: 30px;
 }
 
-.tal{
-  background-color: #06d899;
+.cardsDados{
+  width: 70%;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+}
+
+
+.data-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 20.75em;
+  min-height: 20.75em;
+  overflow: hidden;
+  border-radius: .5em;
+  text-decoration: none;
+  background: white;
+  margin: 1em;
+  padding: 2.75em 2.5em;
+  box-shadow: 0 1.5em 2.5em -.5em rgba(#000000, .1);
+  transition: transform .45s ease, background .45s ease;
+  
+  h3 {
+    color: #2E3C40;
+    font-size: 3.5em;
+    font-weight: 600;
+    line-height: 1;
+    padding-bottom: .5em;
+    margin: 0 0 0.142857143em;
+    border-bottom: 2px solid rgba(145, 198, 182, 0.84);
+    transition: color .45s ease, border .45s ease;
+  }
+
+  h4 {
+    color: #627084;
+    text-transform: uppercase;
+    font-size: 1.125em;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    margin: 0 0 1.777777778em;
+    transition: color .45s ease;
+  }
+
+  p {
+    opacity: 0;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1.8;
+    margin: 0 0 1.25em;
+    transform: translateY(-1em);
+    transition: opacity .45s ease, transform .5s ease;
+  }
+
+  .link-text {
+    display: block;
+    color: #348668;
+    font-size: 1.125em;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: auto 0 0;
+    transition: color .45s ease;
+
+    svg {
+      margin-left: .5em;
+      transition: transform .6s ease;
+      
+      path {
+        transition: fill .45s ease;
+      }
+    }
+  }
+  
+  &:hover {
+    background: rgba(145, 198, 182, 0.84);
+    transform: scale(1.02);
+    
+    h3 {
+      color: #FFFFFF;
+      border-bottom-color: rgba(145, 198, 182, 0.84);
+    }
+
+    h4 {
+      color: #FFFFFF;
+    }
+
+    p {
+      opacity: 1;
+      transform: none;
+    }
+
+    .link-text {
+      color: #FFFFFF;
+
+      svg {
+        animation: point 1.25s infinite alternate;
+        
+        path {
+          fill: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+
+@keyframes point {
+  0% {
+   transform: translateX(0);
+  }
+  100% {
+    transform: translateX(.125em);
+  }
+}
+
+.carrossel{
+  width: 100%;
+  padding: 50px auto;
+  background: #bdbdbd;
 }
 
 
@@ -437,12 +566,16 @@ i{
     background: linear-gradient(#0c280f, #264e40);
     bottom: 0;
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     right: 0;
-    top:100px
+    top:100px;
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
   }
   
   
@@ -450,6 +583,7 @@ i{
   .footer-containers {
     color: #ffffff;
     height: 200px;
+    margin: 0;
     display: flex;
     align-items: center;
     width: max-content;
@@ -457,7 +591,6 @@ i{
   }
   
   .footer-container {
-    margin: 10px;
     margin-left: 10vw;
     padding-left: 20px;
     display: flex;
