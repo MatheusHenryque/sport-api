@@ -8,7 +8,7 @@ app = Flask(__name__)
 conn = pg.connect(
     host="localhost",
     user="postgres",
-    password="*******",
+    password="*****",
     port="5432",
     dbname="SportSphere.bd" 
 )
